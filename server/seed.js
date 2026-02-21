@@ -12,7 +12,7 @@ const Alert = require('./models/Alert');
 async function seed() {
   try {
     await mongoose.connect(process.env.MONGO_URI);
-    console.log('✅ Connected to MongoDB');
+    console.log('Connected to MongoDB');
 
     // Clear existing data
     await Promise.all([
@@ -24,7 +24,7 @@ async function seed() {
       Expense.deleteMany({}),
       Alert.deleteMany({})
     ]);
-    console.log('🗑️  Cleared existing data');
+    console.log('Cleared existing data');
 
     // ── Users ────────────────────────────────────────────────
     const users = await User.create([
@@ -34,7 +34,7 @@ async function seed() {
       { name: 'Arun Nair', email: 'safety@fleetflow.com', password: 'safety123', role: 'Safety Officer', phone: '+91-9000000004' },
       { name: 'Meera Joshi', email: 'finance@fleetflow.com', password: 'finance123', role: 'Financial Analyst', phone: '+91-9000000005' }
     ]);
-    console.log(`👤 Created ${users.length} users`);
+    console.log(`Created ${users.length} users`);
 
     // ── Vehicles (exact spec data) ──────────────────────────
     const vehicles = await Vehicle.create([
@@ -53,7 +53,7 @@ async function seed() {
         type: 'Van',
         max_capacity_kg: 1500,
         odometer_km: 72000,
-        status: 'In Shop',   // Will be confirmed by maintenance automation
+        status: 'In Shop',  
         acquisition_cost: 30000
       },
       {
@@ -66,9 +66,9 @@ async function seed() {
         acquisition_cost: 800
       }
     ]);
-    console.log(`🚛 Created ${vehicles.length} vehicles`);
+    console.log(`Created ${vehicles.length} vehicles`);
 
-    // ── Drivers (exact spec data) ───────────────────────────
+    // Drivers
     const today = new Date();
     const drivers = await Driver.create([
       {
@@ -108,9 +108,9 @@ async function seed() {
         warnings: 0
       }
     ]);
-    console.log(`🧑‍✈️ Created ${drivers.length} drivers`);
+    console.log(`Created ${drivers.length} drivers`);
 
-    // ── Trips (exact spec data) ─────────────────────────────
+    //  Trips 
     const trips = await Trip.create([
       {
         trip_code: 'T-DRAFT-001',
@@ -155,7 +155,7 @@ async function seed() {
         revenue: 950
       }
     ]);
-    console.log(`📦 Created ${trips.length} trips`);
+    console.log(`Created ${trips.length} trips`);
 
     // ── Maintenance (exact spec: VAN-11 Engine Repair, Open) ─
     const maintenance = await Maintenance.create([
@@ -169,7 +169,7 @@ async function seed() {
         status: 'Open'
       }
     ]);
-    console.log(`🔧 Created ${maintenance.length} maintenance records`);
+    console.log(`Created ${maintenance.length} maintenance records`);
 
     // ── Seed Rule-Breaker Alerts (Section 6) ─────────────────
     const alerts = await Alert.create([
@@ -219,16 +219,16 @@ async function seed() {
         resolved: false
       }
     ]);
-    console.log(`⚠️  Created ${alerts.length} seeded alerts`);
+    console.log(`Created ${alerts.length} seeded alerts`);
 
-    console.log('\n✨ Seed completed successfully!');
-    console.log('\n📋 Login credentials:');
+    console.log('\nSeed completed successfully!');
+    console.log('\nLogin credentials:');
     console.log('  Admin:             admin@fleetflow.com / admin123');
     console.log('  Fleet Manager:     fleet@fleetflow.com / fleet123');
     console.log('  Dispatcher:        dispatch@fleetflow.com / dispatch123');
     console.log('  Safety Officer:    safety@fleetflow.com / safety123');
     console.log('  Financial Analyst: finance@fleetflow.com / finance123');
-    console.log('\n📊 Seeded data:');
+    console.log('\nSeeded data:');
     console.log('  3 vehicles (TRK-42 Available, VAN-11 In Shop, BIKE-3 Available)');
     console.log('  3 drivers (Rajesh On Duty, Anjali Suspended, Vikram On Duty)');
     console.log('  3 trips (1 Draft, 1 Dispatched, 1 Completed)');
@@ -237,7 +237,7 @@ async function seed() {
 
     process.exit(0);
   } catch (error) {
-    console.error('❌ Seed failed:', error);
+    console.error('Seed failed:', error);
     process.exit(1);
   }
 }
