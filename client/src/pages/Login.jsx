@@ -64,14 +64,14 @@ export default function Login() {
           <span style={{ margin: '0 8px' }}>·</span>
           <Link to="/signup">{SIGNUP_LINK}</Link>
         </div>
-        <div style={{ marginTop: 24, padding: 16, background: '#f8f9fa', borderRadius: 8, fontSize: '0.75rem', color: '#5f6368' }}>
+        {/* <div style={{ marginTop: 24, padding: 16, background: '#f8f9fa', borderRadius: 8, fontSize: '0.75rem', color: '#5f6368' }}>
           <strong>Demo Accounts:</strong><br/>
           admin@fleetflow.com / admin123<br/>
           fleet@fleetflow.com / fleet123<br/>
           dispatch@fleetflow.com / dispatch123<br/>
           safety@fleetflow.com / safety123<br/>
           finance@fleetflow.com / finance123
-        </div>
+        </div> */}
       </div>
     </div>
   );
