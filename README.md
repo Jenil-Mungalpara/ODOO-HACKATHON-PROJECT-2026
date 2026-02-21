@@ -132,7 +132,7 @@ Fleet Flow/
 - **npm** or **yarn**
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/fleet-flow.git
+git clone https://github.com/Jenil-Mungalpara/ODOO-HACKATHON-PROJECT-2026.git
 cd fleet-flow
 ```
 ### 2. Setup Backend
