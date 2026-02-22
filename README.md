@@ -219,7 +219,6 @@ The app will be available at **http://localhost:5173** with the API proxied to p
 3. **Analytics** — ROI analysis, fuel efficiency, financial summaries
 4. **Vehicles / Drivers / Expenses / Maintenance** — Full CRUD with detail modals
 ---
-## 📄 License
-This project is for educational and demonstration purposes.
+Odoo x Gujarat Vidyapith Hackathon '26
 ---
-Built with ❤️ using the MERN Stack
+Built with ❤️
