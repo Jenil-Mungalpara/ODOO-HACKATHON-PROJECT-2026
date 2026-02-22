@@ -18,7 +18,10 @@ export default function Signup() {
       await register(form);
       navigate('/dashboard');
     } catch (err) {
-      setError(err.response?.data?.message || 'Registration failed.');
+      const message = err.response?.data?.message || 
+                      err.response?.data?.errors?.[0]?.msg || 
+                      'Registration failed. Check your connection or API URL.';
+      setError(message);
     } finally {
       setLoading(false);
     }
