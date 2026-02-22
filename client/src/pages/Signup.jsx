@@ -20,7 +20,7 @@ export default function Signup() {
     } catch (err) {
       const message = err.response?.data?.message || 
                       err.response?.data?.errors?.[0]?.msg || 
-                      'Registration failed. Check your connection or API URL.';
+                      'Registration failed. Check your connection!';
       setError(message);
     } finally {
       setLoading(false);
